@@ -1,0 +1,28 @@
+<ion-content class="wallpaper">
+  <div class="logo">
+   <img  src="../../assets/imgs/logo-big.png">
+  </div>
+  <form [formGroup]="loginForm">
+    <ion-list class="list-login">
+      <ion-item class="item-list-username-login">
+        <ion-label floating for="username">
+          Usuario
+        </ion-label>
+        <ion-input formControlName="username" type="text" name="username" placeholder="Usuario"></ion-input>
+      </ion-item>
+      <ion-item class="item-list-password-login">
+        <ion-label floating for="password">
+          Contraseña
+        </ion-label >
+        <ion-input formControlName="password" type="password" name="password" placeholder="Contraseña"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div class="div-button">
+      <button ion-button class="button-login" [disabled]="!loginForm.valid" type="submit">INGRESAR</button>
+    </div>
+    <ion-item class="terminos">
+        <ion-label>Recordar Contraseña</ion-label>
+        <ion-checkbox (ngModel)="mushrooms"></ion-checkbox>
+    </ion-item>
+  </form>
+</ion-content>

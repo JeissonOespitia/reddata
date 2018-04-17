@@ -1,0 +1,61 @@
+.wallpaper {
+    background-image: url('/assets/imgs/background.png');
+    background-color: rgba(0, 0, 0, 0);
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
+  }
+
+  .logo{
+    margin: 20% auto 10%;
+    padding: 15px;
+    text-align: center;
+  }
+
+  .list-login {
+    width: 75%; 
+    margin: 0% auto !important;
+  }
+  
+  .item-list-username-login {
+    border-radius: 3% 3% 0% 0% !important;
+    color: #fff !important;
+    background-color: #a7162247 !important;
+  }
+  
+  .item-list-password-login {
+    border-radius: 0% 0% 3% 3% !important;
+    color: #fff !important;
+    background-color: #a7162247 !important;
+  }
+
+  .div-button{
+    margin: 5% 13%;
+  }
+  
+  .button-login {
+    width: 100%;
+    margin: 0% !important;
+    padding: 5% 0 !important;
+    background: #a71622 !important;
+    border-radius: 4px;
+  }
+  
+  .terminos {
+    background: transparent !important;
+    width: 75% !important;
+    margin: 0% auto !important;
+    color: rgb(255, 255, 255) !important;
+  }
+  
+  .terminos > .item-inner {
+    border-bottom: none !important;
+  }
+
+  .checkbox-checked {
+    border-color: #a71622 !important;
+    background-color: #a71622 !important;
+}

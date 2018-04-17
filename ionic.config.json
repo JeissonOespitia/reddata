@@ -1,0 +1,8 @@
+{
+  "name": "reddata",
+  "app_id": "2acfa080",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

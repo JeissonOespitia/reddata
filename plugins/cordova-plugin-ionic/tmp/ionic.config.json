@@ -1,0 +1,9 @@
+{
+  "name": "tmp",
+  "app_id": "6cda5a01",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  },
+  "hooks": {}
+}
