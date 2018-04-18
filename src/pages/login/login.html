@@ -2,7 +2,7 @@
   <div class="logo">
    <img  src="../../assets/imgs/logo-big.png">
   </div>
-  <form [formGroup]="loginForm">
+  <form [formGroup]="loginForm" (ngSubmit)="sendLogin()">
     <ion-list class="list-login">
       <ion-item class="item-list-username-login">
         <ion-label floating for="username">

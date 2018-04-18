@@ -147,10 +147,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var LoginPage = /** @class */ (function () {
-    function LoginPage(navCtrl, formBuilder, navParams) {
+    function LoginPage(navCtrl, formBuilder, navParams, toast) {
         this.navCtrl = navCtrl;
         this.formBuilder = formBuilder;
         this.navParams = navParams;
+        this.toast = toast;
         this.ionViewDidLoad();
     }
     LoginPage.prototype.ionViewDidLoad = function () {
@@ -159,15 +160,32 @@ var LoginPage = /** @class */ (function () {
             password: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required],
         });
     };
+    LoginPage.prototype.toastMessage = function (message, duration) {
+        if (duration === void 0) { duration = 3000; }
+        this.toast.create({
+            message: message,
+            duration: duration
+        }).present();
+    };
+    LoginPage.prototype.sendLogin = function () {
+        this.toastMessage('Iniciando Session');
+        var body = {
+            username: this.loginForm.value.username,
+            password: this.loginForm.value.password,
+        };
+        var pass = this.loginForm.value.password;
+        if (pass == 123) {
+            console.log('los campos son ', pass);
+        }
+    };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"/Applications/Xampp/xamppfiles/htdocs/reddata/src/pages/login/login.html"*/'<ion-content class="wallpaper">\n  <div class="logo">\n   <img  src="../../assets/imgs/logo-big.png">\n  </div>\n  <form [formGroup]="loginForm">\n    <ion-list class="list-login">\n      <ion-item class="item-list-username-login">\n        <ion-label floating for="username">\n          Usuario\n        </ion-label>\n        <ion-input formControlName="username" type="text" name="username" placeholder="Usuario"></ion-input>\n      </ion-item>\n      <ion-item class="item-list-password-login">\n        <ion-label floating for="password">\n          Contraseña\n        </ion-label >\n        <ion-input formControlName="password" type="password" name="password" placeholder="Contraseña"></ion-input>\n      </ion-item>\n    </ion-list>\n    <div class="div-button">\n      <button ion-button class="button-login" [disabled]="!loginForm.valid" type="submit">INGRESAR</button>\n    </div>\n    <ion-item class="terminos">\n        <ion-label>Recordar Contraseña</ion-label>\n        <ion-checkbox (ngModel)="mushrooms"></ion-checkbox>\n    </ion-item>\n  </form>\n</ion-content>\n'/*ion-inline-end:"/Applications/Xampp/xamppfiles/htdocs/reddata/src/pages/login/login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"/Applications/Xampp/xamppfiles/htdocs/reddata/src/pages/login/login.html"*/'<ion-content class="wallpaper">\n  <div class="logo">\n   <img  src="../../assets/imgs/logo-big.png">\n  </div>\n  <form [formGroup]="loginForm" (ngSubmit)="sendLogin()">\n    <ion-list class="list-login">\n      <ion-item class="item-list-username-login">\n        <ion-label floating for="username">\n          Usuario\n        </ion-label>\n        <ion-input formControlName="username" type="text" name="username" placeholder="Usuario"></ion-input>\n      </ion-item>\n      <ion-item class="item-list-password-login">\n        <ion-label floating for="password">\n          Contraseña\n        </ion-label >\n        <ion-input formControlName="password" type="password" name="password" placeholder="Contraseña"></ion-input>\n      </ion-item>\n    </ion-list>\n    <div class="div-button">\n      <button ion-button class="button-login" [disabled]="!loginForm.valid" type="submit">INGRESAR</button>\n    </div>\n    <ion-item class="terminos">\n        <ion-label>Recordar Contraseña</ion-label>\n        <ion-checkbox (ngModel)="mushrooms"></ion-checkbox>\n    </ion-item>\n  </form>\n</ion-content>\n'/*ion-inline-end:"/Applications/Xampp/xamppfiles/htdocs/reddata/src/pages/login/login.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ToastController */]) === "function" && _d || Object])
     ], LoginPage);
     return LoginPage;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=login.js.map
